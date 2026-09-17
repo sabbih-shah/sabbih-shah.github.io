@@ -163,23 +163,42 @@
           </div>
         </article>
 
-        <article class="project-card project-card-dark">
-          <div class="card-body">
-            <div class="project-meta"><span>03 / AI security</span><span>Independent R&amp;D</span></div>
-            <h3>Context-aware prompt-injection detection</h3>
-            <p>Built a cross-encoder training and evaluation pipeline that scores a document in the context of the agent reading it—not as an isolated string.</p>
-            <div class="mini-metrics" aria-label="Project scale">
-              <div><strong>19</strong><span>training sources</span></div>
-              <div><strong>10</strong><span>held-out benchmarks</span></div>
-              <div><strong>13,421</strong><span>generated pairs</span></div>
+        <article class="project-card project-card-dark project-card-visual">
+          <button class="figure-button security-image" type="button" data-lightbox aria-label="Enlarge prompt-injection benchmark summary">
+            <img src="/assets/images/agent-security-benchmark.svg" width="1200" height="560" alt="Context-aware prompt-injection scoring pipeline and selected Rogue Security 5k benchmark result." loading="lazy">
+          </button>
+          <div class="card-body project-card-copy">
+            <div>
+              <div class="project-meta"><span>03 / AI security</span><span>Independent R&amp;D</span></div>
+              <h3>Context-aware prompt-injection detection</h3>
             </div>
-            <p class="honesty-note"><span>Evaluation</span> Train/benchmark separation, license tracking, hard-negative design, threshold sweeps, and per-dataset reporting—including weak out-of-domain results.</p>
+            <div>
+              <p>Built a cross-encoder pipeline that scores untrusted content together with the agent policy governing how it should be read.</p>
+              <div class="mini-metrics" aria-label="Selected held-out result">
+                <div><strong>0.974</strong><span>ROC-AUC</span></div>
+                <div><strong>0.900</strong><span>F1</span></div>
+                <div><strong>5,000</strong><span>prompts</span></div>
+              </div>
+              <p class="honesty-note"><span>Named benchmark</span> Results shown are for the Rogue Security 5k set at the stored 0.70 threshold. Performance varied materially across the wider suite.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="card-body">
+            <div class="project-meta"><span>04 / Weather evidence</span><span>Independent R&amp;D</span></div>
+            <h3>Traceable severe-weather reports</h3>
+            <p>Built a deterministic reporting pipeline for hail and tornado cases. It combines radar-derived signals, nearby ground reports, surface observations, warning context, and source health without turning missing records into evidence of absence.</p>
+            <div class="system-flow" aria-label="Evidence report workflow">
+              <span>Claim</span><i aria-hidden="true"></i><span>Sources</span><i aria-hidden="true"></i><span>Evidence</span><i aria-hidden="true"></i><span>Report</span>
+            </div>
+            <p class="honesty-note"><span>Delivery</span> Reviewable Markdown and PDF reports, an event timeline, confidence factors, source manifests, and a static evidence map. Wind and lightning paths remain feature-gated.</p>
           </div>
         </article>
 
         <article class="project-card project-card-system">
           <div class="card-body">
-            <div class="project-meta"><span>04 / Multimodal systems</span><span>Active R&amp;D</span></div>
+            <div class="project-meta"><span>05 / Multimodal systems</span><span>Active R&amp;D</span></div>
             <h3>Multimodal video production runtime</h3>
             <p>Built an orchestration layer for short-form episodes across video, dialogue, Foley, lip sync, compositing, and final assembly. The runtime records each candidate’s inputs, evaluation evidence, and retry history.</p>
             <div class="system-flow" aria-label="Production workflow">

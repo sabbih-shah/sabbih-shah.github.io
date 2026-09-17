@@ -259,6 +259,7 @@ h1 {
 .project-card p { margin-top: 20px; color: #465154; }
 .project-card-visual { grid-column: 1 / -1; min-height: 0; }
 .card-image { aspect-ratio: 1600 / 502; border-bottom: 1px solid var(--line); background: #ece9e2; }
+.security-image { aspect-ratio: 1200 / 560; border-bottom: 1px solid rgba(255, 255, 255, .16); background: #0b1220; }
 .project-card-copy { display: grid; grid-template-columns: .85fr 1.15fr; gap: clamp(40px, 7vw, 100px); }
 .project-card-copy h3 { max-width: 520px; }
 .project-card-copy > div:last-child > p:first-child { margin-top: 0; }

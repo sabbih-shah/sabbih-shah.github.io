@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560" role="img" aria-labelledby="title desc">
+  <title id="title">Agent Security Reranker evaluation summary</title>
+  <desc id="desc">Context and an untrusted document enter a cross-encoder. On the Rogue Security 5k benchmark, the stored evaluation reports 0.9739 ROC-AUC and 0.9001 F1.</desc>
+  <rect width="1200" height="560" rx="24" fill="#0b1220"/>
+  <text x="72" y="78" fill="#f8fafc" font-family="Inter,Arial,sans-serif" font-size="34" font-weight="700">Context-aware prompt-injection scoring</text>
+  <text x="72" y="116" fill="#94a3b8" font-family="Inter,Arial,sans-serif" font-size="19">Trusted context and untrusted content are evaluated together.</text>
+
+  <rect x="72" y="174" width="246" height="118" rx="16" fill="#172033" stroke="#334155"/>
+  <text x="98" y="215" fill="#7dd3fc" font-family="Inter,Arial,sans-serif" font-size="17" font-weight="700">TRUSTED CONTEXT</text>
+  <text x="98" y="250" fill="#e2e8f0" font-family="Inter,Arial,sans-serif" font-size="19">Scanner policy</text>
+  <text x="98" y="276" fill="#94a3b8" font-family="Inter,Arial,sans-serif" font-size="16">Application intent</text>
+
+  <rect x="72" y="320" width="246" height="118" rx="16" fill="#172033" stroke="#334155"/>
+  <text x="98" y="361" fill="#fda4af" font-family="Inter,Arial,sans-serif" font-size="17" font-weight="700">UNTRUSTED CONTENT</text>
+  <text x="98" y="396" fill="#e2e8f0" font-family="Inter,Arial,sans-serif" font-size="19">File, email or tool text</text>
+  <text x="98" y="422" fill="#94a3b8" font-family="Inter,Arial,sans-serif" font-size="16">Preserved as evidence</text>
+
+  <path d="M318 233 H410" stroke="#64748b" stroke-width="3"/>
+  <path d="M318 379 H370 Q410 379 410 337 V292" fill="none" stroke="#64748b" stroke-width="3"/>
+  <path d="M398 221 L418 233 L398 245" fill="#64748b"/>
+
+  <rect x="418" y="198" width="240" height="196" rx="20" fill="#132b36" stroke="#22d3ee" stroke-width="2"/>
+  <text x="452" y="249" fill="#67e8f9" font-family="Inter,Arial,sans-serif" font-size="17" font-weight="700">CROSS-ENCODER</text>
+  <text x="452" y="290" fill="#f8fafc" font-family="Inter,Arial,sans-serif" font-size="24" font-weight="700">ModernBERT</text>
+  <text x="452" y="324" fill="#cbd5e1" font-family="Inter,Arial,sans-serif" font-size="17">Joint representation</text>
+  <text x="452" y="352" fill="#cbd5e1" font-family="Inter,Arial,sans-serif" font-size="17">Calibrated risk score</text>
+
+  <path d="M658 296 H744" stroke="#64748b" stroke-width="3"/>
+  <path d="M732 284 L752 296 L732 308" fill="#64748b"/>
+
+  <rect x="752" y="158" width="376" height="278" rx="20" fill="#111c2e" stroke="#334155"/>
+  <text x="788" y="204" fill="#94a3b8" font-family="Inter,Arial,sans-serif" font-size="16" font-weight="700">SELECTED HELD-OUT BENCHMARK</text>
+  <text x="788" y="242" fill="#f8fafc" font-family="Inter,Arial,sans-serif" font-size="28" font-weight="700">Rogue Security 5k</text>
+  <text x="788" y="273" fill="#94a3b8" font-family="Inter,Arial,sans-serif" font-size="16">5,000 prompts · threshold 0.70</text>
+  <text x="788" y="344" fill="#67e8f9" font-family="Inter,Arial,sans-serif" font-size="50" font-weight="700">0.9739</text>
+  <text x="788" y="377" fill="#cbd5e1" font-family="Inter,Arial,sans-serif" font-size="16">ROC-AUC</text>
+  <text x="978" y="344" fill="#a7f3d0" font-family="Inter,Arial,sans-serif" font-size="50" font-weight="700">0.9001</text>
+  <text x="978" y="377" fill="#cbd5e1" font-family="Inter,Arial,sans-serif" font-size="16">F1</text>
+  <text x="788" y="411" fill="#64748b" font-family="Inter,Arial,sans-serif" font-size="14">Named result, not a suite-wide average.</text>
+
+  <text x="72" y="506" fill="#64748b" font-family="Inter,Arial,sans-serif" font-size="15">Stored evaluation: 2,003 malicious · 2,997 benign · recall 0.8927 · false-positive rate 0.0607</text>
+</svg>
