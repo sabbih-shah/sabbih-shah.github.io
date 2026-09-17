@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="640" viewBox="0 0 1200 640" role="img" aria-labelledby="title desc">
-  <title id="title">Storm Evidence Agent fixture report summary</title>
-  <desc id="desc">A de-identified real-source hail run moves through source normalization, evidence selection, and report generation. One hundred twenty-four radar hail signatures are shown with nearby ground reports and station context.</desc>
+  <title id="title">Storm Evidence Agent real-source report summary</title>
+  <desc id="desc">A de-identified real-source hail run moves through source normalization, evidence selection, and report generation. One hundred twenty-four SWDI radar hail signatures, nearby ground reports, station context, and a historical MRMS archive supplement are summarized.</desc>
   <rect width="1200" height="640" rx="24" fill="#0b1820"/>
   <text x="64" y="62" fill="#f8fafc" font-family="Inter,Arial,sans-serif" font-size="32" font-weight="700">From source records to a reviewable evidence packet</text>
   <text x="64" y="94" fill="#9fb2ba" font-family="Inter,Arial,sans-serif" font-size="17">De-identified real-source run · Okeene area, Oklahoma · 6 May 2024 · hail</text>
@@ -14,7 +14,7 @@
 
   <rect x="308" y="128" width="240" height="88" rx="14" fill="#142a34" stroke="#31505c"/>
   <text x="330" y="161" fill="#a7f3d0" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="700">SOURCE RECORDS</text>
-  <text x="330" y="188" fill="#e6eef1" font-family="Inter,Arial,sans-serif" font-size="16">Radar · reports · ASOS</text>
+  <text x="330" y="188" fill="#e6eef1" font-family="Inter,Arial,sans-serif" font-size="16">Radar · reports · ASOS · MRMS</text>
 
   <path d="M548 172 H594" stroke="#607782" stroke-width="3"/>
   <path d="M582 160 L602 172 L582 184" fill="#607782"/>
@@ -53,6 +53,8 @@
 
   <path d="M330 455 l8 -8 l8 8 l-8 8 z" fill="#fb923c"/>
   <path d="M396 430 l8 -8 l8 8 l-8 8 z" fill="#fb923c"/>
+  <circle cx="365" cy="433" r="6" fill="#34d399" stroke="#d1fae5" stroke-width="2"/>
+  <text x="378" y="414" fill="#a7f3d0" font-family="Inter,Arial,sans-serif" font-size="13">MRMS 1.70 in · within 0.6 mi</text>
   <text x="278" y="482" fill="#fdba74" font-family="Inter,Arial,sans-serif" font-size="13">1.25 in report · 0.3 mi</text>
   <text x="416" y="452" fill="#fdba74" font-family="Inter,Arial,sans-serif" font-size="13">1.75 in · 0.5 mi</text>
 
@@ -60,21 +62,23 @@
   <text x="286" y="544" fill="#81969f" font-family="Inter,Arial,sans-serif" font-size="12">23:30</text>
   <text x="478" y="544" fill="#81969f" font-family="Inter,Arial,sans-serif" font-size="12">00:00</text>
   <text x="664" y="544" fill="#81969f" font-family="Inter,Arial,sans-serif" font-size="12">00:27</text>
-  <text x="64" y="586" fill="#607782" font-family="Inter,Arial,sans-serif" font-size="13">Radar estimate (in)</text>
-  <circle cx="190" cy="581" r="5" fill="#38bdf8"/>
-  <text x="206" y="586" fill="#607782" font-family="Inter,Arial,sans-serif" font-size="13">Ground report</text>
-  <path d="M314 581 l6 -6 l6 6 l-6 6 z" fill="#fb923c"/>
+  <circle cx="70" cy="581" r="5" fill="#38bdf8"/>
+  <text x="84" y="586" fill="#607782" font-family="Inter,Arial,sans-serif" font-size="13">SWDI estimate</text>
+  <path d="M210 581 l6 -6 l6 6 l-6 6 z" fill="#fb923c"/>
+  <text x="224" y="586" fill="#607782" font-family="Inter,Arial,sans-serif" font-size="13">Ground report</text>
+  <circle cx="349" cy="581" r="5" fill="#34d399"/>
+  <text x="363" y="586" fill="#607782" font-family="Inter,Arial,sans-serif" font-size="13">MRMS archive supplement</text>
 
   <rect x="770" y="284" width="366" height="266" rx="18" fill="#101f29" stroke="#31505c"/>
   <text x="802" y="326" fill="#91a7b0" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="700">PACKET SUMMARY</text>
   <text x="802" y="378" fill="#f8fafc" font-family="Inter,Arial,sans-serif" font-size="38" font-weight="700">14 / 16</text>
-  <text x="802" y="405" fill="#a7f3d0" font-family="Inter,Arial,sans-serif" font-size="14">deterministic evidence score · not a probability</text>
+  <text x="802" y="405" fill="#a7f3d0" font-family="Inter,Arial,sans-serif" font-size="14">stored packet score · not a probability</text>
   <line x1="802" y1="430" x2="1104" y2="430" stroke="#31505c"/>
-  <text x="802" y="465" fill="#f8fafc" font-family="Inter,Arial,sans-serif" font-size="20" font-weight="700">124 signatures</text>
+  <text x="802" y="465" fill="#f8fafc" font-family="Inter,Arial,sans-serif" font-size="20" font-weight="700">5 weather sources</text>
   <text x="1000" y="465" fill="#f8fafc" font-family="Inter,Arial,sans-serif" font-size="20" font-weight="700">0.3 mi</text>
-  <text x="802" y="490" fill="#91a7b0" font-family="Inter,Arial,sans-serif" font-size="13">SWDI radar-hail records</text>
+  <text x="802" y="490" fill="#91a7b0" font-family="Inter,Arial,sans-serif" font-size="13">returned matching records</text>
   <text x="1000" y="490" fill="#91a7b0" font-family="Inter,Arial,sans-serif" font-size="13">nearest ground report</text>
-  <text x="802" y="524" fill="#607782" font-family="Inter,Arial,sans-serif" font-size="12">5 source families returned matches; MRMS returned no match.</text>
+  <text x="802" y="524" fill="#607782" font-family="Inter,Arial,sans-serif" font-size="12">MRMS was added by a dated historical-archive lookup; score unchanged.</text>
 
   <text x="64" y="618" fill="#607782" font-family="Inter,Arial,sans-serif" font-size="13">Street address and claim identifiers withheld · every finding retains time, distance, availability, and limitations.</text>
 </svg>

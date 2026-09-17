@@ -1,42 +1,32 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560" role="img" aria-labelledby="title desc">
-  <title id="title">Agent Security Reranker evaluation summary</title>
-  <desc id="desc">Context and an untrusted document enter a cross-encoder. On the Rogue Security 5k benchmark, the stored evaluation reports 0.9739 ROC-AUC and 0.9001 F1.</desc>
-  <rect width="1200" height="560" rx="24" fill="#0b1220"/>
-  <text x="72" y="78" fill="#f8fafc" font-family="Inter,Arial,sans-serif" font-size="34" font-weight="700">Context-aware prompt-injection scoring</text>
-  <text x="72" y="116" fill="#94a3b8" font-family="Inter,Arial,sans-serif" font-size="19">Trusted context and untrusted content are evaluated together.</text>
-
-  <rect x="72" y="174" width="246" height="118" rx="16" fill="#172033" stroke="#334155"/>
-  <text x="98" y="215" fill="#7dd3fc" font-family="Inter,Arial,sans-serif" font-size="17" font-weight="700">TRUSTED CONTEXT</text>
-  <text x="98" y="250" fill="#e2e8f0" font-family="Inter,Arial,sans-serif" font-size="19">Scanner policy</text>
-  <text x="98" y="276" fill="#94a3b8" font-family="Inter,Arial,sans-serif" font-size="16">Application intent</text>
-
-  <rect x="72" y="320" width="246" height="118" rx="16" fill="#172033" stroke="#334155"/>
-  <text x="98" y="361" fill="#fda4af" font-family="Inter,Arial,sans-serif" font-size="17" font-weight="700">UNTRUSTED CONTENT</text>
-  <text x="98" y="396" fill="#e2e8f0" font-family="Inter,Arial,sans-serif" font-size="19">File, email or tool text</text>
-  <text x="98" y="422" fill="#94a3b8" font-family="Inter,Arial,sans-serif" font-size="16">Preserved as evidence</text>
-
-  <path d="M318 233 H410" stroke="#64748b" stroke-width="3"/>
-  <path d="M318 379 H370 Q410 379 410 337 V292" fill="none" stroke="#64748b" stroke-width="3"/>
-  <path d="M398 221 L418 233 L398 245" fill="#64748b"/>
-
-  <rect x="418" y="198" width="240" height="196" rx="20" fill="#132b36" stroke="#22d3ee" stroke-width="2"/>
-  <text x="452" y="249" fill="#67e8f9" font-family="Inter,Arial,sans-serif" font-size="17" font-weight="700">CROSS-ENCODER</text>
-  <text x="452" y="290" fill="#f8fafc" font-family="Inter,Arial,sans-serif" font-size="24" font-weight="700">ModernBERT</text>
-  <text x="452" y="324" fill="#cbd5e1" font-family="Inter,Arial,sans-serif" font-size="17">Joint representation</text>
-  <text x="452" y="352" fill="#cbd5e1" font-family="Inter,Arial,sans-serif" font-size="17">Calibrated risk score</text>
-
-  <path d="M658 296 H744" stroke="#64748b" stroke-width="3"/>
-  <path d="M732 284 L752 296 L732 308" fill="#64748b"/>
-
-  <rect x="752" y="158" width="376" height="278" rx="20" fill="#111c2e" stroke="#334155"/>
-  <text x="788" y="204" fill="#94a3b8" font-family="Inter,Arial,sans-serif" font-size="16" font-weight="700">SELECTED HELD-OUT BENCHMARK</text>
-  <text x="788" y="242" fill="#f8fafc" font-family="Inter,Arial,sans-serif" font-size="28" font-weight="700">Rogue Security 5k</text>
-  <text x="788" y="273" fill="#94a3b8" font-family="Inter,Arial,sans-serif" font-size="16">5,000 prompts · threshold 0.70</text>
-  <text x="788" y="344" fill="#67e8f9" font-family="Inter,Arial,sans-serif" font-size="50" font-weight="700">0.9739</text>
-  <text x="788" y="377" fill="#cbd5e1" font-family="Inter,Arial,sans-serif" font-size="16">ROC-AUC</text>
-  <text x="978" y="344" fill="#a7f3d0" font-family="Inter,Arial,sans-serif" font-size="50" font-weight="700">0.9001</text>
-  <text x="978" y="377" fill="#cbd5e1" font-family="Inter,Arial,sans-serif" font-size="16">F1</text>
-  <text x="788" y="411" fill="#64748b" font-family="Inter,Arial,sans-serif" font-size="14">Named result, not a suite-wide average.</text>
-
-  <text x="72" y="506" fill="#64748b" font-family="Inter,Arial,sans-serif" font-size="15">Stored evaluation: 2,003 malicious · 2,997 benign · recall 0.8927 · false-positive rate 0.0607</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="640" viewBox="0 0 1200 640" role="img" aria-labelledby="title desc">
+  <title id="title">Prompt-injection detector evaluation summary</title>
+  <desc id="desc">A context-aware ModernBERT detector is compared with a BGE reranker on two held-out benchmarks. A separate real-data ModernBERT variant is shown on the canonical S-Labs test split.</desc>
+  <rect width="1200" height="640" rx="24" fill="#0b1220"/>
+  <text x="64" y="66" fill="#f8fafc" font-family="Inter,Arial,sans-serif" font-size="34" font-weight="700">Prompt-injection detection, tested by dataset</text>
+  <text x="64" y="102" fill="#94a3b8" font-family="Inter,Arial,sans-serif" font-size="17">Stored thresholds · named held-out splits · model variants labeled</text>
+  <rect x="64" y="136" width="268" height="408" rx="18" fill="#111c2e" stroke="#334155"/>
+  <text x="92" y="176" fill="#94a3b8" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="700" letter-spacing="1.2">SCORING PATH</text>
+  <rect x="92" y="202" width="212" height="68" rx="12" fill="#17243a" stroke="#334155"/>
+  <text x="112" y="230" fill="#7dd3fc" font-family="Inter,Arial,sans-serif" font-size="12" font-weight="700">TRUSTED CONTEXT</text><text x="112" y="252" fill="#e2e8f0" font-family="Inter,Arial,sans-serif" font-size="15">Policy + application intent</text>
+  <line x1="198" y1="270" x2="198" y2="292" stroke="#64748b" stroke-width="2"/><path d="M190 286 L198 298 L206 286" fill="#64748b"/>
+  <rect x="92" y="298" width="212" height="68" rx="12" fill="#17243a" stroke="#334155"/>
+  <text x="112" y="326" fill="#fda4af" font-family="Inter,Arial,sans-serif" font-size="12" font-weight="700">UNTRUSTED CONTENT</text><text x="112" y="348" fill="#e2e8f0" font-family="Inter,Arial,sans-serif" font-size="15">File, email or tool text</text>
+  <line x1="198" y1="366" x2="198" y2="388" stroke="#64748b" stroke-width="2"/><path d="M190 382 L198 394 L206 382" fill="#64748b"/>
+  <rect x="92" y="394" width="212" height="92" rx="12" fill="#102c38" stroke="#22d3ee"/>
+  <text x="112" y="426" fill="#67e8f9" font-family="Inter,Arial,sans-serif" font-size="12" font-weight="700">CROSS-ENCODER</text><text x="112" y="454" fill="#f8fafc" font-family="Inter,Arial,sans-serif" font-size="21" font-weight="700">Joint risk score</text><text x="112" y="476" fill="#94a3b8" font-family="Inter,Arial,sans-serif" font-size="13">Context and content together</text>
+  <rect x="354" y="136" width="496" height="408" rx="18" fill="#111827" stroke="#334155"/>
+  <text x="382" y="176" fill="#f8fafc" font-family="Inter,Arial,sans-serif" font-size="20" font-weight="700">Same evaluations, same 0.70 threshold</text>
+  <circle cx="383" cy="204" r="5" fill="#22d3ee"/><text x="396" y="209" fill="#cbd5e1" font-family="Inter,Arial,sans-serif" font-size="13">ModernBERT</text><circle cx="500" cy="204" r="5" fill="#64748b"/><text x="513" y="209" fill="#cbd5e1" font-family="Inter,Arial,sans-serif" font-size="13">BGE reranker</text>
+  <text x="382" y="250" fill="#94a3b8" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="700">ROGUE SECURITY 5K · 5,000 RECORDS</text>
+  <text x="382" y="283" fill="#cbd5e1" font-family="Inter,Arial,sans-serif" font-size="13">ROC–AUC</text><rect x="466" y="268" width="326" height="12" rx="6" fill="#1f2937"/><rect x="466" y="268" width="317" height="12" rx="6" fill="#22d3ee"/><rect x="466" y="285" width="306" height="7" rx="3.5" fill="#64748b"/><text x="796" y="280" fill="#67e8f9" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="700">.974</text><text x="796" y="296" fill="#94a3b8" font-family="Inter,Arial,sans-serif" font-size="12">.941</text>
+  <text x="382" y="328" fill="#cbd5e1" font-family="Inter,Arial,sans-serif" font-size="13">F1</text><rect x="466" y="313" width="326" height="12" rx="6" fill="#1f2937"/><rect x="466" y="313" width="293" height="12" rx="6" fill="#22d3ee"/><rect x="466" y="330" width="270" height="7" rx="3.5" fill="#64748b"/><text x="763" y="325" fill="#67e8f9" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="700">.900</text><text x="740" y="341" fill="#94a3b8" font-family="Inter,Arial,sans-serif" font-size="12">.828</text>
+  <line x1="382" y1="365" x2="822" y2="365" stroke="#263449"/>
+  <text x="382" y="395" fill="#94a3b8" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="700">AGENTHARM · 352 RECORDS</text>
+  <text x="382" y="428" fill="#cbd5e1" font-family="Inter,Arial,sans-serif" font-size="13">ROC–AUC</text><rect x="466" y="413" width="326" height="12" rx="6" fill="#1f2937"/><rect x="466" y="413" width="286" height="12" rx="6" fill="#22d3ee"/><rect x="466" y="430" width="264" height="7" rx="3.5" fill="#64748b"/><text x="756" y="425" fill="#67e8f9" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="700">.879</text><text x="734" y="441" fill="#94a3b8" font-family="Inter,Arial,sans-serif" font-size="12">.810</text>
+  <text x="382" y="473" fill="#cbd5e1" font-family="Inter,Arial,sans-serif" font-size="13">F1</text><rect x="466" y="458" width="326" height="12" rx="6" fill="#1f2937"/><rect x="466" y="458" width="259" height="12" rx="6" fill="#22d3ee"/><rect x="466" y="475" width="253" height="7" rx="3.5" fill="#64748b"/><text x="729" y="470" fill="#67e8f9" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="700">.794</text><text x="723" y="486" fill="#94a3b8" font-family="Inter,Arial,sans-serif" font-size="12">.776</text><text x="382" y="518" fill="#64748b" font-family="Inter,Arial,sans-serif" font-size="12">ModernBERT: mixed-data context model · BGE: stored v2 run</text>
+  <rect x="872" y="136" width="264" height="408" rx="18" fill="#10251f" stroke="#34d399"/>
+  <text x="900" y="176" fill="#a7f3d0" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="700" letter-spacing="1.2">CANONICAL TEST SPLIT</text><text x="900" y="214" fill="#f8fafc" font-family="Inter,Arial,sans-serif" font-size="24" font-weight="700">S-Labs</text><text x="900" y="240" fill="#94a3b8" font-family="Inter,Arial,sans-serif" font-size="14">2,101 records · test split</text>
+  <text x="900" y="310" fill="#6ee7b7" font-family="Inter,Arial,sans-serif" font-size="48" font-weight="700">.996</text><text x="900" y="335" fill="#cbd5e1" font-family="Inter,Arial,sans-serif" font-size="13">ROC–AUC</text><text x="900" y="398" fill="#f8fafc" font-family="Inter,Arial,sans-serif" font-size="32" font-weight="700">.971 F1</text><text x="900" y="427" fill="#cbd5e1" font-family="Inter,Arial,sans-serif" font-size="14">3.05% false-positive rate</text>
+  <line x1="900" y1="452" x2="1108" y2="452" stroke="#295044"/><text x="900" y="481" fill="#a7f3d0" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="700">0 exact overlaps</text><text x="900" y="503" fill="#94a3b8" font-family="Inter,Arial,sans-serif" font-size="12">with 440k-row prepared train set</text><text x="900" y="524" fill="#64748b" font-family="Inter,Arial,sans-serif" font-size="11">Real-data ModernBERT · threshold .25</text>
+  <text x="64" y="594" fill="#64748b" font-family="Inter,Arial,sans-serif" font-size="13">Named stored runs; variants are not pooled. No public-baseline superiority or state-of-the-art claim.</text>
 </svg>

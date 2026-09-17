@@ -164,8 +164,8 @@
         </article>
 
         <article class="project-card project-card-dark project-card-visual">
-          <button class="figure-button security-image" type="button" data-lightbox aria-label="Enlarge prompt-injection benchmark summary">
-            <img src="/assets/images/agent-security-benchmark.svg" width="1200" height="560" alt="Context-aware prompt-injection scoring pipeline and selected Rogue Security 5k benchmark result." loading="lazy">
+          <button class="figure-button security-image" type="button" data-lightbox aria-label="Enlarge prompt-injection benchmark comparison">
+            <img src="/assets/images/agent-security-benchmark.svg" width="1200" height="640" alt="ModernBERT and BGE results on two held-out prompt-injection benchmarks, plus a separate ModernBERT result on the canonical S-Labs test split." loading="lazy">
           </button>
           <div class="card-body project-card-copy">
             <div>
@@ -173,13 +173,14 @@
               <h3>Context-aware prompt-injection detection</h3>
             </div>
             <div>
-              <p>Built a cross-encoder pipeline that scores untrusted content together with the agent policy governing how it should be read.</p>
-              <div class="mini-metrics" aria-label="Selected held-out result">
-                <div><strong>0.974</strong><span>ROC-AUC</span></div>
-                <div><strong>0.900</strong><span>F1</span></div>
-                <div><strong>5,000</strong><span>prompts</span></div>
+              <p>Built a cross-encoder pipeline that scores untrusted content together with the agent policy governing how it should be read. At the same 0.70 threshold, ModernBERT outperformed the stored BGE run on Rogue Security 5k and AgentHarm.</p>
+              <div class="mini-metrics" aria-label="Selected held-out results">
+                <div><strong>0.974</strong><span>Rogue AUC</span></div>
+                <div><strong>0.879</strong><span>AgentHarm AUC</span></div>
+                <div><strong>0.996</strong><span>S-Labs test AUC</span></div>
               </div>
-              <p class="honesty-note"><span>Named benchmark</span> Results shown are for the Rogue Security 5k set at the stored 0.70 threshold. Performance varied materially across the wider suite.</p>
+              <p>A separate real-data ModernBERT variant reached 0.9955 ROC-AUC and 0.9710 F1 on the 2,101-record S-Labs test split. Those test records had zero exact text matches in the full 440,338-row prepared training set.</p>
+              <p class="honesty-note"><span>Evaluation scope</span> Named stored runs are shown separately; performance varied by dataset. No completed public-baseline run was stored, so this is not a state-of-the-art claim.</p>
             </div>
           </div>
         </article>
@@ -195,14 +196,19 @@
             </div>
             <div>
               <p>Built a deterministic reporting pipeline for hail and tornado cases. It preserves each finding’s source, time, distance, availability state, and limitations.</p>
-              <p>In a de-identified Okeene-area run for 6 May 2024, five source families returned matches. The packet contained 124 SWDI radar-hail signatures, four ground reports, six Storm Events records, and observations from four ASOS stations.</p>
+              <p>In a de-identified Okeene-area run for 6 May 2024, five weather-data sources returned matching records after a historical MRMS archive check. The evidence included 124 SWDI radar-hail signatures, four ground reports, six Storm Events records, observations from four ASOS stations, and MRMS MESH near the property.</p>
               <ul class="tag-list" aria-label="Real-source run summary">
                 <li>0.3 mi nearest report</li>
+                <li>1.70 in MRMS within 0.6 mi</li>
                 <li>3.00 in radar estimate</li>
                 <li>14 / 16 evidence score</li>
                 <li>Address withheld</li>
               </ul>
-              <p class="honesty-note"><span>Interpretation</span> Radar values are probable evidence near the property, not direct property observations. MRMS returned no matching historical file and remained a documented no-match source rather than negative evidence.</p>
+              <p class="honesty-note"><span>Interpretation</span> Radar values are estimates near the property, not direct observations of hail or damage at the structure. The 14/16 score is the original packet score and was not recalculated after the MRMS supplement.</p>
+              <div class="project-actions" aria-label="Storm evidence sample report">
+                <a class="text-link" href="/case-studies/okeene-hail-evidence-review.pdf" target="_blank" rel="noopener">View sample report <span aria-hidden="true">↗</span></a>
+                <a class="text-link" href="/case-studies/okeene-hail-evidence-review.pdf" download>Download PDF <span aria-hidden="true">↓</span></a>
+              </div>
             </div>
           </div>
         </article>

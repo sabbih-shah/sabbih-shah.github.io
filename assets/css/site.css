@@ -252,6 +252,7 @@ h1 {
 }
 
 .text-link:hover { text-decoration: underline; text-underline-offset: 5px; }
+.project-actions { display: flex; flex-wrap: wrap; gap: 12px 26px; margin-top: 22px; }
 
 .project-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; margin-top: 22px; }
 .project-card { min-height: 500px; border: 1px solid var(--line); background: var(--white); }
@@ -259,7 +260,7 @@ h1 {
 .project-card p { margin-top: 20px; color: #465154; }
 .project-card-visual { grid-column: 1 / -1; min-height: 0; }
 .card-image { aspect-ratio: 1600 / 502; border-bottom: 1px solid var(--line); background: #ece9e2; }
-.security-image { aspect-ratio: 1200 / 560; border-bottom: 1px solid rgba(255, 255, 255, .16); background: #0b1220; }
+.security-image { aspect-ratio: 1200 / 640; border-bottom: 1px solid rgba(255, 255, 255, .16); background: #0b1220; }
 .evidence-image { aspect-ratio: 1200 / 640; border-bottom: 1px solid var(--line); background: #0b1820; }
 .project-card-copy { display: grid; grid-template-columns: .85fr 1.15fr; gap: clamp(40px, 7vw, 100px); }
 .project-card-copy h3 { max-width: 520px; }
