@@ -184,27 +184,42 @@
           </div>
         </article>
 
-        <article class="project-card">
-          <div class="card-body">
-            <div class="project-meta"><span>04 / Weather evidence</span><span>Independent R&amp;D</span></div>
-            <h3>Traceable severe-weather reports</h3>
-            <p>Built a deterministic reporting pipeline for hail and tornado cases. It combines radar-derived signals, nearby ground reports, surface observations, warning context, and source health without turning missing records into evidence of absence.</p>
-            <div class="system-flow" aria-label="Evidence report workflow">
-              <span>Claim</span><i aria-hidden="true"></i><span>Sources</span><i aria-hidden="true"></i><span>Evidence</span><i aria-hidden="true"></i><span>Report</span>
+        <article class="project-card project-card-visual">
+          <button class="figure-button evidence-image" type="button" data-lightbox aria-label="Enlarge de-identified storm evidence report summary">
+            <img src="/assets/images/storm-evidence-summary.svg" width="1200" height="640" alt="De-identified real-source hail run showing the evidence pipeline, radar-hail scan maxima, nearby ground reports, and report summary." loading="lazy">
+          </button>
+          <div class="card-body project-card-copy">
+            <div>
+              <div class="project-meta"><span>04 / Weather evidence</span><span>Independent R&amp;D</span></div>
+              <h3>Traceable severe-weather reports</h3>
             </div>
-            <p class="honesty-note"><span>Delivery</span> Reviewable Markdown and PDF reports, an event timeline, confidence factors, source manifests, and a static evidence map. Wind and lightning paths remain feature-gated.</p>
+            <div>
+              <p>Built a deterministic reporting pipeline for hail and tornado cases. It preserves each finding’s source, time, distance, availability state, and limitations.</p>
+              <p>In a de-identified Okeene-area run for 6 May 2024, five source families returned matches. The packet contained 124 SWDI radar-hail signatures, four ground reports, six Storm Events records, and observations from four ASOS stations.</p>
+              <ul class="tag-list" aria-label="Real-source run summary">
+                <li>0.3 mi nearest report</li>
+                <li>3.00 in radar estimate</li>
+                <li>14 / 16 evidence score</li>
+                <li>Address withheld</li>
+              </ul>
+              <p class="honesty-note"><span>Interpretation</span> Radar values are probable evidence near the property, not direct property observations. MRMS returned no matching historical file and remained a documented no-match source rather than negative evidence.</p>
+            </div>
           </div>
         </article>
 
-        <article class="project-card project-card-system">
-          <div class="card-body">
-            <div class="project-meta"><span>05 / Multimodal systems</span><span>Active R&amp;D</span></div>
-            <h3>Multimodal video production runtime</h3>
-            <p>Built an orchestration layer for short-form episodes across video, dialogue, Foley, lip sync, compositing, and final assembly. The runtime records each candidate’s inputs, evaluation evidence, and retry history.</p>
-            <div class="system-flow" aria-label="Production workflow">
-              <span>Plan</span><i aria-hidden="true"></i><span>Generate</span><i aria-hidden="true"></i><span>Measure</span><i aria-hidden="true"></i><span>Repair</span>
+        <article class="project-card project-card-system project-card-visual">
+          <div class="card-body project-card-copy">
+            <div>
+              <div class="project-meta"><span>05 / Multimodal systems</span><span>Active R&amp;D</span></div>
+              <h3>Multimodal video production runtime</h3>
             </div>
-            <p class="honesty-note"><span>Implementation</span> 107 Python modules, 185 automated tests, resident multi-GPU queues, deterministic manifests, and smallest-unit regeneration.</p>
+            <div>
+              <p>Built an orchestration layer for short-form episodes across video, dialogue, Foley, lip sync, compositing, and final assembly. The runtime records each candidate’s inputs, evaluation evidence, and retry history.</p>
+              <div class="system-flow" aria-label="Production workflow">
+                <span>Plan</span><i aria-hidden="true"></i><span>Generate</span><i aria-hidden="true"></i><span>Measure</span><i aria-hidden="true"></i><span>Repair</span>
+              </div>
+              <p class="honesty-note"><span>Implementation</span> 107 Python modules, 185 automated tests, resident multi-GPU queues, deterministic manifests, and smallest-unit regeneration.</p>
+            </div>
           </div>
         </article>
       </div>
