@@ -1,9 +1,12 @@
 \documentclass[10pt,letterpaper]{article}
 
 \usepackage[margin=0.58in,top=0.5in,bottom=0.52in]{geometry}
-\usepackage{cmap}
-\usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage{cmap}
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\fi
 \usepackage{lmodern}
 \usepackage{microtype}
 \usepackage{enumitem}
@@ -11,8 +14,10 @@
 \usepackage{needspace}
 \usepackage[hidelinks]{hyperref}
 \usepackage{parskip}
-\input{glyphtounicode}
-\pdfgentounicode=1
+\ifPDFTeX
+  \input{glyphtounicode}
+  \pdfgentounicode=1
+\fi
 \hypersetup{
   pdftitle={Syed Sabbih Haider Shah - Senior AI Research Engineer},
   pdfauthor={Syed Sabbih Haider Shah},
@@ -48,7 +53,7 @@
 \end{center}
 
 \section*{Summary}
-Senior AI research engineer with 7+ years of experience designing, training, evaluating, and deploying machine learning systems across scientific forecasting, generative AI, speech, and computer vision. Experience spans distributed training on NERSC Perlmutter and ORNL Frontier, production inference, geospatial data pipelines, and evaluation designed around real operational failure modes. Combines research ownership with hands-on Python, PyTorch, C++, CUDA, MLOps, and technical leadership.
+Senior AI research engineer with 7+ years of experience designing, training, evaluating, and deploying machine learning systems across scientific forecasting, generative AI, AI security, speech, and computer vision. Experience spans distributed training on NERSC Perlmutter and ORNL Frontier, production inference, geospatial data pipelines, and evaluation designed around real operational failure modes. Combines research ownership with hands-on Python, PyTorch, C++, CUDA, MLOps, and technical leadership.
 
 \section*{Core Skills}
 \textbf{Machine learning:} PyTorch, Transformers, U-Nets, diffusion models, cross-encoders, spatiotemporal forecasting, computer vision, ASR/TTS, model calibration and evaluation\\
@@ -69,7 +74,7 @@ Senior AI research engineer with 7+ years of experience designing, training, eva
 \begin{itemize}
   \item Lead OpenSCS research for hail, thunderstorm-wind, and tornado risk, spanning label design, rare-event sampling, model training, multi-decade hindcasts, and spatial evaluation.
   \item Built peril-specific U-Net workflows over a 1980--2025 atmospheric archive and introduced diagnostics for spatial agreement, hotspot capture, ranking, and probability calibration.
-  \item Translate model results into concise, inspectable research products that state both demonstrated skill and remaining calibration gaps.
+  \item Built a deterministic severe-weather reporting pipeline that combines MRMS, SWDI, Local Storm Reports, Storm Events, ASOS observations, radar coverage, and explicit evidence scoring into reviewable case packets.
 \end{itemize}
 
 \job{Dashverse}{Apr 2023--Feb 2026}{Lead Research Engineer --- Full-time}{United States / Remote}
@@ -109,9 +114,10 @@ Senior AI research engineer with 7+ years of experience designing, training, eva
 
 \section*{Selected Research and Engineering Projects}
 
-\project{Regional weather forecasting and evaluation}{Scientific ML / HPC}
+\project{Weather forecasting and severe-weather reporting}{Scientific ML / HPC}
 \begin{itemize}
   \item Built matched forecast comparisons across regional numerical guidance and global AI systems, plus anomaly-conditioned evaluation for warm and cold extremes; published methods and results at \href{https://www.editable.ai/forecast/}{editable.ai/forecast}.
+  \item Published a property-level hail review using five weather sources, time-aligned radar and report evidence, and a four-page audit packet: \href{https://www.editable.ai/evidence/}{editable.ai/evidence}.
 \end{itemize}
 
 \project{AI-agent prompt-injection detector}{AI security / NLP}
