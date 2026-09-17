@@ -71,14 +71,14 @@
 
   <rect x="770" y="284" width="366" height="266" rx="18" fill="#101f29" stroke="#31505c"/>
   <text x="802" y="326" fill="#91a7b0" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="700">PACKET SUMMARY</text>
-  <text x="802" y="378" fill="#f8fafc" font-family="Inter,Arial,sans-serif" font-size="38" font-weight="700">14 / 16</text>
-  <text x="802" y="405" fill="#a7f3d0" font-family="Inter,Arial,sans-serif" font-size="14">stored packet score · not a probability</text>
+  <text x="802" y="378" fill="#f8fafc" font-family="Inter,Arial,sans-serif" font-size="38" font-weight="700">16 / 16</text>
+  <text x="802" y="405" fill="#a7f3d0" font-family="Inter,Arial,sans-serif" font-size="14">evidence score · not a probability</text>
   <line x1="802" y1="430" x2="1104" y2="430" stroke="#31505c"/>
   <text x="802" y="465" fill="#f8fafc" font-family="Inter,Arial,sans-serif" font-size="20" font-weight="700">5 weather sources</text>
   <text x="1000" y="465" fill="#f8fafc" font-family="Inter,Arial,sans-serif" font-size="20" font-weight="700">0.3 mi</text>
   <text x="802" y="490" fill="#91a7b0" font-family="Inter,Arial,sans-serif" font-size="13">returned matching records</text>
   <text x="1000" y="490" fill="#91a7b0" font-family="Inter,Arial,sans-serif" font-size="13">nearest ground report</text>
-  <text x="802" y="524" fill="#607782" font-family="Inter,Arial,sans-serif" font-size="12">MRMS was added by a dated historical-archive lookup; score unchanged.</text>
+  <text x="802" y="524" fill="#607782" font-family="Inter,Arial,sans-serif" font-size="12">Property-area MRMS agrees with the two nearby hail reports.</text>
 
   <text x="64" y="618" fill="#607782" font-family="Inter,Arial,sans-serif" font-size="13">Street address and claim identifiers withheld · every finding retains time, distance, availability, and limitations.</text>
 </svg>
