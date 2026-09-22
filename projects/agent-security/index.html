@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f3f0e8">
+  <title>Context-aware prompt-injection detection — Syed Sabbih Haider Shah</title>
+  <meta name="description" content="A research case study on scoring untrusted content with its agent context, careful benchmark separation, and dataset-specific prompt-injection results.">
+  <link rel="canonical" href="https://sabbih-shah.github.io/projects/agent-security/">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <link rel="stylesheet" href="/assets/css/case-study.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="wordmark" href="/" aria-label="Syed Sabbih Haider Shah, home"><span class="monogram" aria-hidden="true">SS</span><span>Syed Sabbih Haider Shah</span></a>
+      <nav aria-label="Main navigation">
+        <a href="/#work">Work</a>
+        <a href="/#experience">Experience</a>
+        <a class="nav-cta" href="/cv/Sabbih_Shah_CV.pdf">Résumé <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="case-hero shell">
+      <p class="eyebrow">Independent research · AI security</p>
+      <h1>Context changes whether a message is an attack.</h1>
+      <p class="case-lede">I built a detector that scores untrusted text alongside the instructions governing how an agent should use it. The same sentence can be a harmless quotation in one setting and an attempt to redirect the agent in another.</p>
+      <div class="case-facts" aria-label="Study summary">
+        <div><strong>Two models</strong><span>ModernBERT and BGE reranker</span></div>
+        <div><strong>Two matched tests</strong><span>Rogue Security 5k and AgentHarm</span></div>
+        <div><strong>One input pair</strong><span>Trusted context + untrusted content</span></div>
+      </div>
+    </section>
+
+    <section class="case-band">
+      <div class="shell case-grid">
+        <div>
+          <p class="eyebrow">The question</p>
+          <h2>Can the model use context?</h2>
+        </div>
+        <div class="case-copy">
+          <p>A string-only detector sees the suspicious sentence but not what the application asked the agent to do. I framed detection as a pairwise classification problem: the trusted task and policy form one input; retrieved pages, tool output, email, or files form the other.</p>
+          <p>I built separate training and benchmark data paths, source-aware normalization, hard-negative generation, threshold selection on validation data, and benchmark-specific evaluation. This made it possible to compare stored model runs on the same prepared test records without mixing training and test material into one score.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-section shell" aria-labelledby="results-heading">
+      <div class="case-heading">
+        <div><p class="eyebrow">Selected evaluations</p><h2 id="results-heading">Results by dataset</h2></div>
+        <p>ModernBERT and BGE were evaluated on the same prepared files at a fixed 0.70 decision threshold. The figures below show named stored runs, not a pooled benchmark.</p>
+      </div>
+      <button class="figure-button case-figure" type="button" data-lightbox aria-label="Enlarge prompt-injection benchmark figure">
+        <img src="/assets/images/agent-security-benchmark.svg" width="1200" height="640" alt="ModernBERT and BGE results on Rogue Security 5k and AgentHarm, with a separate S-Labs test result from another ModernBERT variant.">
+      </button>
+      <div class="case-table-wrap">
+        <table class="case-table">
+          <caption>Matched stored comparison at threshold 0.70</caption>
+          <thead><tr><th scope="col">Dataset</th><th scope="col">Model</th><th scope="col">ROC-AUC</th><th scope="col">F1</th><th scope="col">False-positive rate</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Rogue Security 5k <small>5,000 records</small></th><td data-label="Model">ModernBERT</td><td data-label="ROC-AUC">0.974</td><td data-label="F1">0.900</td><td data-label="False-positive rate">6.1%</td></tr>
+            <tr><th scope="row">Rogue Security 5k <small>5,000 records</small></th><td data-label="Model">BGE reranker</td><td data-label="ROC-AUC">0.941</td><td data-label="F1">0.828</td><td data-label="False-positive rate">8.1%</td></tr>
+            <tr><th scope="row">AgentHarm <small>352 records</small></th><td data-label="Model">ModernBERT</td><td data-label="ROC-AUC">0.879</td><td data-label="F1">0.794</td><td data-label="False-positive rate">33.0%</td></tr>
+            <tr><th scope="row">AgentHarm <small>352 records</small></th><td data-label="Model">BGE reranker</td><td data-label="ROC-AUC">0.810</td><td data-label="F1">0.776</td><td data-label="False-positive rate">35.2%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="case-note">The two datasets test different behavior. The AgentHarm false-positive rate shows that a threshold selected for one setting should not be carried into another without calibration.</p>
+    </section>
+
+    <section class="case-section case-section-tinted">
+      <div class="shell case-grid">
+        <div><p class="eyebrow">Separate model variant</p><h2>Canonical test split</h2></div>
+        <div class="case-copy">
+          <p>A different ModernBERT checkpoint, trained on collected real datasets, reached <strong>0.9955 ROC-AUC</strong> and <strong>0.9710 F1</strong> on the 2,101-record S-Labs test split at its stored 0.25 threshold.</p>
+          <p>The prepared training set contained 440,338 rows. An audit found zero exact matches with the test text after case folding and whitespace normalization. That check does not establish that there were no semantic near-duplicates. This result belongs to its own model variant and is not part of the comparison above.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-section shell">
+      <div class="case-grid">
+        <div><p class="eyebrow">What the work established</p><h2>A useful screening component needs a deployment policy.</h2></div>
+        <div class="case-copy">
+          <p>Context-aware scoring improved the two matched stored comparisons. The wider benchmark suite showed variable transfer across domains, so I treated the model as one screening signal. The application still needs rules for what to do with a flagged document, a calibrated threshold for its traffic, and monitoring for false alerts.</p>
+          <p>This case study uses aggregate results only. Raw research datasets and model weights are not published here.</p>
+          <a class="text-link" href="/#work">Back to selected work <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="shell"><span>© 2026 Syed Sabbih Haider Shah</span><a href="mailto:sabbihshah@gmail.com">Email</a></div></footer>
+  <dialog class="lightbox" id="image-lightbox" aria-label="Enlarged benchmark figure"><button class="lightbox-close" type="button" aria-label="Close enlarged figure">Close <span aria-hidden="true">×</span></button><img src="" alt=""><p>Click outside the figure or press Escape to close.</p></dialog>
+  <script src="/assets/js/site.js"></script>
+</body>
+</html>

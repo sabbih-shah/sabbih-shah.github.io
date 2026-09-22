@@ -53,10 +53,10 @@
 \end{center}
 
 \section*{Summary}
-Senior AI research engineer with 7+ years of experience designing, training, evaluating, and deploying machine learning systems across scientific forecasting, generative AI, AI security, speech, and computer vision. Experience spans distributed training on NERSC Perlmutter and ORNL Frontier, production inference, geospatial data pipelines, and evaluation designed around real operational failure modes. Combines research ownership with hands-on Python, PyTorch, C++, CUDA, MLOps, and technical leadership.
+Senior AI research engineer with 7+ years of experience building evaluated machine-learning systems for weather, geospatial analysis, and production applications. Work spans distributed model training, forecast verification, rare-event calibration, and production inference on NERSC Perlmutter, ORNL Frontier, and cloud platforms. Hired and managed a 15+ person cross-functional team and managed a separate 5+ person research and engineering team while remaining hands-on with Python, PyTorch, and deployment.
 
 \section*{Core Skills}
-\textbf{Machine learning:} PyTorch, Transformers, U-Nets, diffusion models, cross-encoders, spatiotemporal forecasting, computer vision, ASR/TTS, model calibration and evaluation\\
+\textbf{Machine learning:} PyTorch, Transformers, U-Nets, diffusion models, LoRA/QLoRA, cross-encoders, spatiotemporal forecasting, computer vision, ASR/TTS, calibration and evaluation\\
 \textbf{Systems and data:} Python, C++, CUDA, NumPy, pandas, xarray, Dask, Zarr, ONNX, NVIDIA DeepStream, Docker, Git, Linux, Slurm\\
 \textbf{Infrastructure:} Distributed multi-GPU training and inference, NERSC Perlmutter, ORNL Frontier, Azure, GCP, streaming and batch pipelines
 
@@ -72,18 +72,19 @@ Senior AI research engineer with 7+ years of experience designing, training, eva
 
 \job{\href{https://www.editable.ai/}{Editable AI}}{Feb 2025--Present}{AI Research Lead --- Full-time}{Remote}
 \begin{itemize}
-  \item Demonstrated Hyper-CONUS v2 achieved lower four-lead mean RMSE than HRRR for 2024 2 m temperature and dew point; at observed $\pm$5 K anomalies, temperature RMSE was 11.2\% lower for warm cases and 16.3\% lower for cold cases.
-  \item Built the reproducible verification pipeline across 702 matched initialization times, eight forecasting systems, native and common grids, and URMA/MRMS ground truth.
+  \item Demonstrated Hyper-CONUS v2 achieved lower four-lead mean RMSE than HRRR for 2024 2 m temperature and dew point; for observed anomalies of at least +5 K and at most -5 K, temperature RMSE was 11.2\% and 16.3\% lower, respectively.
+  \item Built a reproducible verification pipeline across 702 matched initialization times, eight forecasting systems, native and common grids, URMA analyses, and MRMS radar estimates.
   \item Built a deterministic severe-weather reporting pipeline that combines MRMS, SWDI, Local Storm Reports, Storm Events, ASOS observations, radar coverage, and explicit evidence scoring into reviewable case packets.
 \end{itemize}
 
 \job{Dashverse}{Apr 2023--Feb 2026}{Lead Research Engineer --- Full-time}{United States / Remote}
 \begin{itemize}
-  \item Designed, implemented, and deployed the AI inference stack for multimodal content-generation products.
-  \item Led data collection, model development, and integration across language, vision, image-generation, and multimodal systems.
-  \item Trained and deployed multiple controllable Stable Diffusion models and led research on next-generation image and text generation.
+  \item Managed a team of 5+ and built the production AI inference stack for multimodal storytelling, including language, vision, and controllable diffusion models.
+  \item Curated and cleaned LLM training data; fine-tuned screenplay, dialogue, and character-memory models with LoRA, QLoRA, and full-parameter training; evaluated and integrated them into production.
+  \item Automated repetitive steps in short-form episode creation with smaller helper models and agents, reducing the time to produce a three-minute episode by about 40\%.
 \end{itemize}
 
+\Needspace{9\baselineskip}
 \job{WeVoz}{Jul 2021--Sep 2023}{Lead Machine Learning Engineer --- Contract}{Italy / Remote}
 \begin{itemize}
   \item Trained and deployed a custom Italian speech-recognition model achieving 4.1\% word error rate and a punctuation model achieving 92\% accuracy.
@@ -94,7 +95,7 @@ Senior AI research engineer with 7+ years of experience designing, training, eva
 \Needspace{9\baselineskip}
 \job{Pagarba Solutions}{Sep 2021--Jan 2023}{Team Lead, AI, MLOps \& Optimization --- Full-time}{United States / Remote}
 \begin{itemize}
-  \item Led cross-functional teams and end-to-end ML delivery across generative AI, diffusion, computer vision, and mobile inference projects.
+  \item Hired and managed a 15+ person team of researchers, MLOps engineers, mobile developers, and software developers; owned cross-functional ML projects from requirements through deployment.
   \item Built and deployed a 30,000-class LEGO recognition system with 96\% top-3 accuracy and optimized models for constrained devices.
 \end{itemize}
 
@@ -112,22 +113,16 @@ Senior AI research engineer with 7+ years of experience designing, training, eva
   \item Deployed revenue forecasting at 4\% mean absolute error; course classification at 96\% precision and 95\% recall; and a Transformer multi-topic classifier at 94\% accuracy.
 \end{itemize}
 
-\section*{Selected Research and Engineering Projects}
+\section*{Selected Public Work}
 
-\project{Weather forecasting and severe-weather reporting}{Scientific ML / HPC}
+\project{Forecast verification and storm evidence}{Weather / Geospatial ML}
 \begin{itemize}
-  \item Built matched forecast comparisons across regional numerical guidance and global AI systems, plus anomaly-conditioned evaluation for warm and cold extremes; published methods and results at \href{https://www.editable.ai/forecast/}{editable.ai/forecast}.
-  \item Published a property-level hail review using five weather sources, time-aligned radar and report evidence, and a four-page audit packet: \href{https://www.editable.ai/evidence/}{editable.ai/evidence}.
+  \item Public methods and case studies: \href{https://www.editable.ai/forecast/}{forecast verification} and \href{https://www.editable.ai/evidence/}{property-level storm evidence}.
 \end{itemize}
 
 \project{AI-agent prompt-injection detector}{AI security / NLP}
 \begin{itemize}
-  \item Built a context-aware cross-encoder pipeline with strict separation between 19 training sources and 10 held-out benchmarks; created and audited 13,421 adversarial and hard-negative training pairs across agent, RAG, tool, memory, and multilingual attack surfaces.
-\end{itemize}
-
-\project{Governed multimodal video production runtime}{Generative AI / Systems}
-\begin{itemize}
-  \item Designed a fail-closed pipeline for video, dialogue, Foley, lip sync, compositing, and final assembly with hash-bound evidence, resident multi-GPU batching, targeted retries, 107 Python modules, and 185 automated tests.
+  \item Built a context-aware cross-encoder and curated 13,421 adversarial and hard-negative pairs across agent and RAG attack surfaces; published \href{https://sabbih-shah.github.io/projects/agent-security/}{dataset-specific evaluations} without pooling model variants.
 \end{itemize}
 
 \project{Severe-weather event-set generation}{Open source / Geospatial ML}
@@ -138,7 +133,7 @@ Senior AI research engineer with 7+ years of experience designing, training, eva
 \section*{Education}
 \textbf{Master of Engineering, Machine Learning and Image Processing} \hfill 2017--2019\\
 Air University\\[3pt]
-\textbf{Bachelor of Science, Electrical Engineering} \hfill 2013--2017\\
+\textbf{Bachelor of Electrical Engineering (Electronics)} \hfill 2013--2017\\
 Air University
 
 \end{document}

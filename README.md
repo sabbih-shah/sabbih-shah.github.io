@@ -14,10 +14,11 @@ Then open `http://localhost:8080`.
 
 ## Build the résumé
 
-The PDF is built from the checked-in LaTeX source with Tectonic:
+The PDF is built from the checked-in LaTeX source. On NERSC:
 
 ```bash
-tectonic --outdir cv cv/Sabbih_Shah_CV.tex
+module load texlive/2024
+pdflatex -interaction=nonstopmode -halt-on-error -output-directory=cv cv/Sabbih_Shah_CV.tex
 ```
 
 Confirm that the result remains two pages and that its text can be extracted before publishing it.
